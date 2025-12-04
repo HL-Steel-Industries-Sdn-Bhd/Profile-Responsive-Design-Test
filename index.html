@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>员工专属界面 Demo</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 默认竖屏布局 */
+@media (orientation: portrait) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 横屏布局 */
+@media (orientation: landscape) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 样式：A 头像 */
+.profile-pic {
+  background-color: #87cefa;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+
+/* 样式：B 信息 */
+.info {
+  background-color: #ffa07a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 样式：C 跑马灯 */
+.marquee {
+  background-color: #90ee90;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 样式：D 按钮区 */
+.buttons {
+  background-color: #dda0dd;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.buttons button:hover {
+  background-color: #f0f0f0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- A: Profile Picture -->
+  <div class="profile-pic">A</div>
+
+  <!-- B: Name / Department / Position -->
+  <div class="info">
+    <h2>John Doe</h2>
+    <p>Department: IT</p>
+    <p>Position: Developer</p>
+  </div>
+
+  <!-- C: Announcement / Marquee -->
+  <div class="marquee">
+    <span>📢 Welcome to the new system! Stay tuned for updates. 🌟</span>
+  </div>
+
+  <!-- D: Buttons -->
+  <div class="buttons">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+    <button>Button 4</button>
+    <button>Button 5</button>
+    <button>Button 6</button>
+  </div>
+</div>
+</body>
+</html>
